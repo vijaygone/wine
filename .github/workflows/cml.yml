@@ -5,10 +5,10 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-      - name: cml-run
+      - name: cml_run
         env: 
           repo-token: ${{secrets.GITHUB_TOKEN}}
-          run: |
-            pip install -r requirements.txt
-            python train.py
+        run: |
+          pip install -r requirements.txt
+          python train.py
     
