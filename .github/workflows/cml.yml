@@ -1,0 +1,14 @@
+name: cml_workflow
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: cml-run
+        env: 
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          run: |
+            pip install -r requirements.txt
+            python train.py
+    
